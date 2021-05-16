@@ -8,6 +8,7 @@ export default class VideoPlayer {
     bindTriggers() {
         this.btns.forEach(btn => {
             btn.addEventListener('click', () => {
+                //Если мы уже открывали видео, то оно не создается вновь, а его блоку задается display: flex
                 if (document.querySelector('iframe#frame')) {
                     this.overlay.style.display = 'flex';
                 } else {
