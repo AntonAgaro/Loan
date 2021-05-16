@@ -55,6 +55,7 @@ gulp.task("watch", () => {
     browsersync.init({
         server: {
             baseDir: "./dist/",
+            //Опция для запуска всех html файлов для многостраничных сайтов
             serveStaticOptions: {
                 extensions: ["html"]
             }
