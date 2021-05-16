@@ -75,18 +75,19 @@ export default class MiniSlider extends Slider {
     }
 
     init() {
-        this.container.style.cssText = `
+        try {
+            this.container.style.cssText = `
             display: flex;
             flex-wrap: wrap;
             overflow: hidden;
             align-items: flex-start;
-        `;
+            `;
 
-        this.bindTriggers();
-        this.decorizeSlides();
+            this.bindTriggers();
+            this.decorizeSlides();
 
-        if(this.autoplay) {
-            this.activateAnimation();
+            if(this.autoplay) {
+                this.activateAnimation();
 
             this.slides.forEach(slide => {
                 slide.addEventListener('mouseenter', () => clearInterval(this.paused));
@@ -94,5 +95,6 @@ export default class MiniSlider extends Slider {
             });
 
         }
+        } catch(e){}
     }
 }
